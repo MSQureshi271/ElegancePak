@@ -1,0 +1,95 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "A fragrance product in the catalog.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique URL-friendly identifier" },
+        "name": { "type": "string" },
+        "notes": { "type": "string" },
+        "price": { "type": "number" },
+        "img": { "type": "string", "format": "uri" },
+        "color": { "type": "string", "description": "Hex color code for the product gradient" },
+        "gender": { "type": "string", "enum": ["Unisex", "Feminine", "Masculine"] },
+        "collection": { "type": "string", "enum": ["Permanent", "Private Blend", "Limited"] },
+        "description": { "type": "string" },
+        "stock": { "type": "number", "description": "Available stock quantity" },
+        "createdAt": { "type": "timestamp" }
+      },
+      "required": ["id", "name", "notes", "price", "img", "gender", "collection", "description", "stock"]
+    },
+    "User": {
+      "title": "User",
+      "description": "A user of the application.",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "role": { "type": "string", "enum": ["admin", "customer"] },
+        "firstName": { "type": "string" },
+        "lastName": { "type": "string" },
+        "country": { "type": "string" },
+        "province": { "type": "string" },
+        "city": { "type": "string" },
+        "address": { "type": "string" },
+        "postalCode": { "type": "string" },
+        "phone": { "type": "string" },
+        "notes": { "type": "string" }
+      },
+      "required": ["email", "role"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "A user's purchase order.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "price": { "type": "number" },
+              "quantity": { "type": "number" },
+              "img": { "type": "string" }
+            },
+            "required": ["id", "name", "price", "quantity", "img"]
+          }
+        },
+        "totalAmount": { "type": "number" },
+        "status": { "type": "string", "enum": ["pending", "processing", "shipped", "delivered", "cancelled"] },
+        "createdAt": { "type": "timestamp" },
+        "shippingAddress": {
+          "type": "object",
+          "properties": {
+            "firstName": { "type": "string" },
+            "lastName": { "type": "string" },
+            "address": { "type": "string" },
+            "city": { "type": "string" },
+            "province": { "type": "string" },
+            "country": { "type": "string" },
+            "postalCode": { "type": "string" },
+            "phone": { "type": "string" }
+          }
+        }
+      },
+      "required": ["userId", "items", "totalAmount", "status", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": { "$ref": "#/entities/Product" },
+      "description": "The collection of all fragrance products."
+    },
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "User profiles and roles."
+    },
+    "/users/{userId}/orders/{orderId}": {
+      "schema": { "$ref": "#/entities/Order" },
+      "description": "Purchase history for a user."
+    }
+  }
+}

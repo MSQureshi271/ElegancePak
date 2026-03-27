@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #FDFCF8;
+    --color-secondary: #C5A059;
+    --color-tertiary: #666666;
+    --color-neutral: #1A1A1A;
+    --color-surface: rgba(0, 0, 0, 0.05);
+    --color-border: rgba(0, 0, 0, 0.1);
+  }
+  
+  .dark {
+    --color-primary: #1A1A1A;
+    --color-secondary: #C5A059;
+    --color-tertiary: #F5F5DC;
+    --color-neutral: #FDFCF8;
+    --color-surface: rgba(255, 255, 255, 0.05);
+    --color-border: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-tertiary: var(--color-tertiary);
+  --color-neutral: var(--color-neutral);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body {
+  @apply bg-primary text-neutral font-sans antialiased selection:bg-secondary/30 selection:text-secondary transition-colors duration-300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif;
+}
