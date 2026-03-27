@@ -234,7 +234,7 @@ export default function Orders() {
                   {order.items.map((item, i) => (
                     <div key={i} className="flex items-center gap-4">
                       <div className="w-16 h-20 bg-primary border border-border overflow-hidden shrink-0">
-                        <img src={item.img} alt={item.name} className="w-full h-full object-cover" />
+                        <img referrerPolicy="no-referrer" src={item.img} alt={item.name} className="w-full h-full object-cover" />
                       </div>
                       <div className="flex-grow">
                         <Link to={`/product/${item.id}`} className="font-serif text-neutral hover:text-secondary transition-colors">

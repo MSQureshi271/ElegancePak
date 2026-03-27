@@ -22,6 +22,7 @@ export default function Home() {
           className="absolute inset-0 z-0"
         >
           <img 
+            referrerPolicy="no-referrer"
             src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=2000&auto=format&fit=crop" 
             alt="Luxury Perfume Bottle" 
             className="w-full h-full object-cover opacity-70"
@@ -87,6 +88,7 @@ export default function Home() {
                 }}
               >
                 <img 
+                  referrerPolicy="no-referrer"
                   src={signatureProduct.img} 
                   alt={signatureProduct.name} 
                   className="max-w-full max-h-full object-contain filter drop-shadow-2xl hover:scale-105 transition-transform duration-700"
@@ -150,6 +152,7 @@ export default function Home() {
                   <div className="aspect-[3/4] bg-surface mb-6 overflow-hidden rounded-sm relative transition-colors duration-300">
                     <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors z-10" />
                     <img 
+                      referrerPolicy="no-referrer"
                       src={product.img} 
                       alt={product.name}
                       className="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"

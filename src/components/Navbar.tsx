@@ -244,7 +244,7 @@ export default function Navbar({ onOpenBag, isDarkMode, toggleTheme }: { onOpenB
                       className="flex gap-6 group items-center"
                     >
                       <div className="w-20 h-24 bg-surface rounded-sm overflow-hidden flex-shrink-0">
-                        <img src={product.img} alt={product.name} className="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                        <img referrerPolicy="no-referrer" src={product.img} alt={product.name} className="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
                       </div>
                       <div>
                         <h3 className="font-serif text-xl text-neutral group-hover:text-secondary transition-colors">{product.name}</h3>

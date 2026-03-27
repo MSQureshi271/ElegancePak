@@ -58,6 +58,7 @@ export default function Product() {
           className="relative h-[60vh] flex items-center justify-center mb-16"
         >
           <img 
+            referrerPolicy="no-referrer"
             src={product.img} 
             alt={product.name} 
             className="max-w-full max-h-full object-contain filter drop-shadow-2xl"

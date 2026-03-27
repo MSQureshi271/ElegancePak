@@ -306,7 +306,7 @@ export default function Admin() {
                   <td className="py-4 px-4">
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-16 bg-surface overflow-hidden flex-shrink-0">
-                        <img src={product.img} alt={product.name} className="w-full h-full object-cover" />
+                        <img referrerPolicy="no-referrer" src={product.img} alt={product.name} className="w-full h-full object-cover" />
                       </div>
                       <div>
                         <div className="font-serif text-neutral">{product.name}</div>
@@ -497,7 +497,7 @@ export default function Admin() {
                       <td className="py-4 px-4">
                         <div className="flex items-center gap-4">
                           <div className="w-10 h-10 bg-surface overflow-hidden flex-shrink-0">
-                            <img src={item.img} alt={item.name} className="w-full h-full object-cover" />
+                            <img referrerPolicy="no-referrer" src={item.img} alt={item.name} className="w-full h-full object-cover" />
                           </div>
                           <span className="font-serif text-neutral">{item.name}</span>
                         </div>

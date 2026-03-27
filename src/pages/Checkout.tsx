@@ -348,7 +348,7 @@ export default function Checkout() {
             {displayItems.map(item => (
               <div key={item.id} className="flex justify-between items-center border-b border-border pb-4">
                 <div className="flex items-center gap-4">
-                  <img src={item.img} alt={item.name} className="w-12 h-16 object-cover" />
+                  <img referrerPolicy="no-referrer" src={item.img} alt={item.name} className="w-12 h-16 object-cover" />
                   <div>
                     <p className="font-serif text-neutral">{item.name}</p>
                     <p className="text-xs text-tertiary">Qty: {item.quantity}</p>

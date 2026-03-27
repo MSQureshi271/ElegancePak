@@ -47,7 +47,7 @@ export default function ShoppingBag({ isOpen, onClose }: { isOpen: boolean; onCl
                 items.map((item) => (
                   <div key={item.id} className="flex gap-6">
                     <div className="w-24 h-32 bg-surface rounded-sm overflow-hidden flex-shrink-0 transition-colors duration-300">
-                      <img src={item.img} alt={item.name} className="w-full h-full object-cover opacity-95" />
+                      <img referrerPolicy="no-referrer" src={item.img} alt={item.name} className="w-full h-full object-cover opacity-95" />
                     </div>
                     <div className="flex flex-col justify-between flex-grow">
                       <div className="flex justify-between items-start">
