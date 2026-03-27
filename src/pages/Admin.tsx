@@ -7,6 +7,7 @@ import { db } from '../firebase';
 import { products as seedData } from '../data/products';
 import { Trash2, Edit, Plus, Database, X, Loader2, Package, ShoppingBag, Eye, CheckCircle2 } from 'lucide-react';
 import { toast } from 'sonner';
+import SafeImage from '../components/SafeImage';
 
 export default function Admin() {
   const { isAdmin, loading: authLoading } = useAuth();

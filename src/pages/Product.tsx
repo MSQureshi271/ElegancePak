@@ -4,6 +4,7 @@ import { ArrowRight, Plus, Minus, Check } from 'lucide-react';
 import { useParams, Link } from 'react-router-dom';
 import { useProducts } from '../hooks/useProducts';
 import { useCart } from '../context/CartContext';
+import SafeImage from '../components/SafeImage';
 
 export default function Product() {
   const { id } = useParams();

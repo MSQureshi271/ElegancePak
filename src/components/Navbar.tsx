@@ -6,6 +6,7 @@ import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useProducts } from '../hooks/useProducts';
 import { toast } from 'sonner';
+import SafeImage from './SafeImage';
 
 export default function Navbar({ onOpenBag, isDarkMode, toggleTheme }: { onOpenBag: () => void, isDarkMode: boolean, toggleTheme: () => void }) {
   const { cartCount } = useCart();

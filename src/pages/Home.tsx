@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Reviews from '../components/Reviews';
 import { useProducts } from '../hooks/useProducts';
+import SafeImage from '../components/SafeImage';
 
 export default function Home() {
   const { products, loading } = useProducts();

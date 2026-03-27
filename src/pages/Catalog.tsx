@@ -3,6 +3,7 @@ import { useState, useMemo } from 'react';
 import { Filter, ChevronDown, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useProducts } from '../hooks/useProducts';
+import SafeImage from '../components/SafeImage';
 
 export default function Catalog() {
   const { products, loading } = useProducts();
@@ -152,8 +153,7 @@ export default function Catalog() {
                       <div className="absolute inset-0 bg-primary/20 transition-colors z-10 flex items-center justify-center">
                         <span className="bg-primary/90 text-secondary px-4 py-2 text-xs uppercase tracking-widest font-bold">Out of Stock</span>
                       </div>
-                      <img 
-                        referrerPolicy="no-referrer"
+                      <SafeImage 
                         src={product.img} 
                         alt={product.name}
                         className="w-full h-full object-cover opacity-95 transition-all duration-700"
@@ -171,8 +171,7 @@ export default function Catalog() {
                   <Link to={`/product/${product.id}`}>
                     <div className="aspect-[3/4] bg-surface mb-6 overflow-hidden rounded-sm relative transition-colors duration-300">
                       <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors z-10" />
-                      <img 
-                        referrerPolicy="no-referrer"
+                      <SafeImage 
                         src={product.img} 
                         alt={product.name}
                         className="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"

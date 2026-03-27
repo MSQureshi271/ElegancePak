@@ -2,6 +2,7 @@ import { X, Minus, Plus, ArrowRight, Trash2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
+import SafeImage from './SafeImage';
 
 export default function ShoppingBag({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const { items, updateQuantity, removeFromCart, cartTotal, cartCount } = useCart();

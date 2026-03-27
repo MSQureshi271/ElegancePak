@@ -6,6 +6,7 @@ import { motion } from 'motion/react';
 import { Package, Clock, CheckCircle2, XCircle, Truck, CheckCircle, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
+import SafeImage from '../components/SafeImage';
 
 interface OrderItem {
   id: string;
